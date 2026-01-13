@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChapChap Courier | Smart Parcel Operations</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <span class="logo">CC</span>
+        <div>
+          <p class="brand-name">ChapChap Courier</p>
+          <p class="brand-tagline">Transport &amp; Logistics Command Center</p>
+        </div>
+      </div>
+      <nav class="site-nav">
+        <a href="#login">Login</a>
+        <a href="#features">Platform</a>
+        <a href="#roles">Roles</a>
+        <a href="#dashboards">Dashboards</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#updates">Live Updates</a>
+      </nav>
+      <button class="primary">Request Demo</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Courier Web App</p>
+          <h1>Barcode-driven parcel intelligence for admins, workers, and customers.</h1>
+          <p class="hero-subtitle">
+            ChapChap Courier unifies scanning, automated data capture, and instant customer notifications so every parcel
+            update is accurate, timely, and traceable end-to-end.
+          </p>
+          <div class="hero-actions">
+            <button class="primary">Launch Web App</button>
+            <button class="ghost">Download Service Guide</button>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <h3>99.2%</h3>
+              <p>Scan-to-update accuracy</p>
+            </div>
+            <div>
+              <h3>45 sec</h3>
+              <p>Average barcode processing time</p>
+            </div>
+            <div>
+              <h3>24/7</h3>
+              <p>Customer notification coverage</p>
+            </div>
+          </div>
+        </div>
+        <div class="login-card" id="login">
+          <h2>Courier App Login</h2>
+          <p>Access role-based dashboards for admin oversight, worker scans, and customer tracking.</p>
+          <form class="login-form">
+            <label>
+              Email address
+              <input type="email" placeholder="you@chapchapcourier.com" required />
+            </label>
+            <label>
+              Password
+              <input type="password" placeholder="••••••••" required />
+            </label>
+            <label>
+              Role
+              <select>
+                <option>Admin</option>
+                <option>Worker</option>
+                <option>Customer</option>
+              </select>
+            </label>
+            <button type="submit" class="primary full">Sign in</button>
+            <button type="button" class="ghost full">Create customer account</button>
+          </form>
+          <div class="login-note">
+            <span>SSO ready</span>
+            <span>2FA enabled</span>
+            <span>Audit logs active</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="features band" id="features">
+        <div class="section-header">
+          <h2>Built for precision parcel operations</h2>
+          <p>
+            Every scan automatically captures location, time, and handler details, then syncs to the database for
+            reporting and Excel export.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <h3>Smart barcode scanning</h3>
+            <p>Workers scan once to log parcel ID, handler, timestamp, and geolocation without manual entry.</p>
+          </article>
+          <article>
+            <h3>Live customer updates</h3>
+            <p>Customers receive instant notifications the moment a worker scans and updates a package detail.</p>
+          </article>
+          <article>
+            <h3>Excel-ready analytics</h3>
+            <p>All scan data is stored in the centralized database for export into Excel and compliance reporting.</p>
+          </article>
+          <article>
+            <h3>Admin command view</h3>
+            <p>Admins oversee scanning activity, parcel status, and worker performance in one secure console.</p>
+          </article>
+          <article>
+            <h3>Automated parcel history</h3>
+            <p>Each scan builds a time-stamped audit trail that workers can enrich with notes and exceptions.</p>
+          </article>
+          <article>
+            <h3>Destination confirmation</h3>
+            <p>Final destination scans close the parcel record and trigger delivery confirmation notifications.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="roles" id="roles">
+        <div class="section-header">
+          <h2>Role-based experiences</h2>
+          <p>Each user type gets a tailored workspace with the tools they need to keep parcels moving.</p>
+        </div>
+        <div class="role-grid">
+          <article>
+            <h3>Admin</h3>
+            <ul>
+              <li>Monitor all scans, routes, and parcel health in real time.</li>
+              <li>Approve exceptions, escalations, and final destination confirmations.</li>
+              <li>Generate Excel reports for compliance and operational review.</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Worker</h3>
+            <ul>
+              <li>Scan barcodes to capture location, time, and handler details automatically.</li>
+              <li>Update package status and add handling notes in seconds.</li>
+              <li>Trigger instant notifications to customers after every scan.</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Customer</h3>
+            <ul>
+              <li>Track parcels with real-time status updates after every worker scan.</li>
+              <li>Receive alerts when the parcel reaches the final destination.</li>
+              <li>View delivery history and proof-of-handling details online.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="dashboards band" id="dashboards">
+        <div class="section-header">
+          <h2>Courier web app dashboards</h2>
+          <p>Quick snapshots show what each role sees after signing in.</p>
+        </div>
+        <div class="dashboard-grid">
+          <article>
+            <div class="card-header">
+              <h3>Admin oversight</h3>
+              <span class="badge">Control</span>
+            </div>
+            <ul>
+              <li>Live parcel map with hub activity.</li>
+              <li>Worker scan compliance and alerts.</li>
+              <li>Export queue for Excel reporting.</li>
+            </ul>
+          </article>
+          <article>
+            <div class="card-header">
+              <h3>Worker scan flow</h3>
+              <span class="badge">Operations</span>
+            </div>
+            <ul>
+              <li>Barcode scanner and camera capture.</li>
+              <li>Auto-populated handler and route details.</li>
+              <li>Instant status updates to customer portal.</li>
+            </ul>
+          </article>
+          <article>
+            <div class="card-header">
+              <h3>Customer tracking</h3>
+              <span class="badge">Experience</span>
+            </div>
+            <ul>
+              <li>Delivery timeline from first scan to arrival.</li>
+              <li>Push/email notifications after every scan.</li>
+              <li>Proof-of-delivery when delivered.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="workflow" id="workflow">
+        <div class="section-header">
+          <h2>Barcode-first delivery workflow</h2>
+          <p>Every customer update starts with a worker scan, ensuring complete traceability.</p>
+        </div>
+        <div class="workflow-steps">
+          <div>
+            <span class="step">01</span>
+            <h3>Scan at pickup</h3>
+            <p>Worker scans the barcode to log pickup location, time, and handler.</p>
+          </div>
+          <div>
+            <span class="step">02</span>
+            <h3>In-transit updates</h3>
+            <p>Each checkpoint scan updates the database and triggers customer notifications.</p>
+          </div>
+          <div>
+            <span class="step">03</span>
+            <h3>Out for delivery</h3>
+            <p>Final-mile scans confirm the courier and expected delivery window.</p>
+          </div>
+          <div>
+            <span class="step">04</span>
+            <h3>Delivered confirmation</h3>
+            <p>Final destination scan sends delivery confirmation and closes the parcel record.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="updates band" id="updates">
+        <div class="section-header">
+          <h2>Live scan &amp; notification console</h2>
+          <p>Simulate how worker scans populate the database, update status, and trigger customer alerts.</p>
+        </div>
+        <div class="updates-grid">
+          <div class="scan-panel">
+            <h3>Worker scan station</h3>
+            <label>
+              Barcode ID
+              <input id="barcode-input" type="text" placeholder="CC-2048-9912" />
+            </label>
+            <label>
+              Location
+              <select id="location-select">
+                <option>Nairobi Hub</option>
+                <option>Mombasa Port</option>
+                <option>Kisumu Depot</option>
+                <option>Final Destination</option>
+              </select>
+            </label>
+            <label>
+              Handler
+              <select id="handler-select">
+                <option>Worker: Amina K.</option>
+                <option>Worker: David O.</option>
+                <option>Worker: Faith N.</option>
+              </select>
+            </label>
+            <label>
+              Status Update
+              <select id="status-select">
+                <option>Picked up</option>
+                <option>In transit</option>
+                <option>Arrived at hub</option>
+                <option>Delivered</option>
+              </select>
+            </label>
+            <button class="primary full" id="scan-button">Log scan &amp; notify</button>
+            <p class="helper-text">
+              Every scan automatically records time and triggers a notification to the customer portal.
+            </p>
+            <div class="scan-summary" id="scan-summary">No scans recorded yet.</div>
+            <div class="scan-automation">
+              <h4>Automation captured</h4>
+              <ul>
+                <li>GPS location tagged to scan.</li>
+                <li>Handler ID matched to worker profile.</li>
+                <li>Parcel timeline updated in database.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="notification-panel">
+            <h3>Customer notification preview</h3>
+            <div class="notification-card" id="notification-card">
+              <div class="notification-header">
+                <p class="notification-title">Awaiting first scan</p>
+                <span class="status-pill status-pending">Pending</span>
+              </div>
+              <p class="notification-body">
+                No parcel updates yet. Scan a barcode to send the first customer alert.
+              </p>
+              <div class="notification-meta">
+                <span id="notification-time">Last updated: --</span>
+                <span id="notification-status">Status: Pending</span>
+              </div>
+            </div>
+            <h4>Scan log</h4>
+            <div class="scan-log">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Barcode</th>
+                    <th>Location</th>
+                    <th>Handler</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="scan-log-body">
+                  <tr>
+                    <td>--</td>
+                    <td>CC-2048-9912</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>Pending</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="database-preview">
+              <h4>Database snapshot</h4>
+              <div class="db-grid">
+                <div>
+                  <span class="db-label">Parcel ID</span>
+                  <span class="db-value" id="db-parcel">CC-2048-9912</span>
+                </div>
+                <div>
+                  <span class="db-label">Last handler</span>
+                  <span class="db-value" id="db-handler">--</span>
+                </div>
+                <div>
+                  <span class="db-label">Last location</span>
+                  <span class="db-value" id="db-location">--</span>
+                </div>
+                <div>
+                  <span class="db-label">Last scan time</span>
+                  <span class="db-value" id="db-time">--</span>
+                </div>
+                <div>
+                  <span class="db-label">Status</span>
+                  <span class="db-value" id="db-status">Pending</span>
+                </div>
+                <div>
+                  <span class="db-label">Customer notification</span>
+                  <span class="db-value" id="db-notification">Queued</span>
+                </div>
+              </div>
+            </div>
+            <div class="excel-export">
+              <p>All scan data is stored in the parcel database and ready for reporting.</p>
+              <button class="ghost full">Generate Excel report</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <h3>ChapChap Courier</h3>
+        <p>Secure, automated courier operations with barcode-first visibility.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Service Level Agreements</a>
+        <a href="#">Support</a>
+      </div>
+    </footer>
+  </body>
+</html>
