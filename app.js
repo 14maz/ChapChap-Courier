@@ -12,39 +12,6 @@ const dbTime = document.querySelector("#db-time");
 const dbStatus = document.querySelector("#db-status");
 const dbNotification = document.querySelector("#db-notification");
 const scanSummary = document.querySelector("#scan-summary");
-const demoOnceButton = document.querySelector("#demo-once");
-const demoStartButton = document.querySelector("#demo-start");
-const demoStopButton = document.querySelector("#demo-stop");
-
-const demoScans = [
-  {
-    barcode: "CC-7781-2024",
-    location: "Nairobi Hub",
-    handler: "Worker: Amina K.",
-    status: "Picked up",
-  },
-  {
-    barcode: "CC-7781-2024",
-    location: "Mombasa Port",
-    handler: "Worker: David O.",
-    status: "In transit",
-  },
-  {
-    barcode: "CC-7781-2024",
-    location: "Kisumu Depot",
-    handler: "Worker: Faith N.",
-    status: "Arrived at hub",
-  },
-  {
-    barcode: "CC-7781-2024",
-    location: "Final Destination",
-    handler: "Worker: Amina K.",
-    status: "Delivered",
-  },
-];
-
-let demoInterval = null;
-let demoIndex = 0;
 
 const renderNotification = ({ barcode, location, handler, status, time }) => {
   const isDelivered = status.toLowerCase() === "delivered";
@@ -103,9 +70,45 @@ const handleScan = () => {
 
 scanButton.addEventListener("click", handleScan);
 
+// --- Demo controls and automated demo scans ---
+const demoOnceButton = document.querySelector("#demo-once");
+const demoStartButton = document.querySelector("#demo-start");
+const demoStopButton = document.querySelector("#demo-stop");
+
+const demoScans = [
+  {
+    barcode: "CC-7781-2024",
+    location: "Nairobi Hub",
+    handler: "Worker: Amina K.",
+    status: "Picked up",
+  },
+  {
+    barcode: "CC-7781-2024",
+    location: "Mombasa Port",
+    handler: "Worker: David O.",
+    status: "In transit",
+  },
+  {
+    barcode: "CC-7781-2024",
+    location: "Kisumu Depot",
+    handler: "Worker: Faith N.",
+    status: "Arrived at hub",
+  },
+  {
+    barcode: "CC-7781-2024",
+    location: "Final Destination",
+    handler: "Worker: Amina K.",
+    status: "Delivered",
+  },
+];
+
+let demoInterval = null;
+let demoIndex = 0;
+
 const applyDemoScan = () => {
   const nextScan = demoScans[demoIndex];
   demoIndex = (demoIndex + 1) % demoScans.length;
+  if (!nextScan) return;
   barcodeInput.value = nextScan.barcode;
   locationSelect.value = nextScan.location;
   handlerSelect.value = nextScan.handler;
@@ -117,9 +120,9 @@ const startDemo = () => {
   if (demoInterval) {
     return;
   }
-  demoStartButton.disabled = true;
-  demoStopButton.disabled = false;
-  demoOnceButton.disabled = true;
+  if (demoStartButton) demoStartButton.disabled = true;
+  if (demoStopButton) demoStopButton.disabled = false;
+  if (demoOnceButton) demoOnceButton.disabled = true;
   applyDemoScan();
   demoInterval = setInterval(applyDemoScan, 5000);
 };
@@ -130,11 +133,11 @@ const stopDemo = () => {
   }
   clearInterval(demoInterval);
   demoInterval = null;
-  demoStartButton.disabled = false;
-  demoStopButton.disabled = true;
-  demoOnceButton.disabled = false;
+  if (demoStartButton) demoStartButton.disabled = false;
+  if (demoStopButton) demoStopButton.disabled = true;
+  if (demoOnceButton) demoOnceButton.disabled = false;
 };
 
-demoOnceButton.addEventListener("click", applyDemoScan);
-demoStartButton.addEventListener("click", startDemo);
-demoStopButton.addEventListener("click", stopDemo);
+if (demoOnceButton) demoOnceButton.addEventListener("click", applyDemoScan);
+if (demoStartButton) demoStartButton.addEventListener("click", startDemo);
+if (demoStopButton) demoStopButton.addEventListener("click", stopDemo);
