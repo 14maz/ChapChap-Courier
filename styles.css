@@ -349,6 +349,36 @@ main section {
   font-size: 0.9rem;
 }
 
+.demo-controls {
+  margin-top: 1.2rem;
+  padding: 1rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: #fff;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.demo-title {
+  font-weight: 600;
+}
+
+.demo-description {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.demo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.demo-actions button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .scan-automation ul {
   margin-top: 0.6rem;
   padding-left: 1.2rem;
